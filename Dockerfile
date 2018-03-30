@@ -14,7 +14,7 @@ WORKDIR /
 RUN apk add --no-cache aria2 darkhttpd wget unzip && \
     mkdir  /conf /download /AriaNG && \ 
     wget -c https://github.com/mayswind/AriaNg/releases/download/0.4.0/aria-ng-0.4.0.zip -O ariaNG.zip && \
-    unzip ariaNG.zip /AriaNG/ && \
+    unzip -o -d /AriaNG ariaNG.zip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip 
 
