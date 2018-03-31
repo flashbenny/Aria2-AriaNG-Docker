@@ -17,13 +17,12 @@ RUN apk add --no-cache --update bash aria2 darkhttpd wget unzip && \
     unzip -o -d /AriaNG ariaNG.zip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip && \
-    chmod +x /init/aria2ui.sh
-
+    
 COPY init/ /conf/
+RUN chmod +x /conf/aria2ui.sh
 
 VOLUME ["/conf", "/download"]
 
-EXPOSE 6800
-EXPOSE 18800
+EXPOSE 6800 18800
 
 CMD ["/conf/aria2ui.sh"]
