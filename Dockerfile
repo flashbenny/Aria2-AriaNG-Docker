@@ -11,16 +11,17 @@ LABEL Platform="DSM" \
 
 WORKDIR /
 
-RUN apk add --no-cache aria2 darkhttpd wget unzip && \
+RUN apk add --no-cache --update bash aria2 darkhttpd wget unzip && \
     mkdir  /conf /download /AriaNG && \ 
     wget -c https://github.com/mayswind/AriaNg/releases/download/0.4.0/aria-ng-0.4.0.zip -O ariaNG.zip && \
     unzip -o -d /AriaNG ariaNG.zip && \
     apk del wget unzip && \
-    rm -rf ariaNG.zip 
+    rm -rf ariaNG.zip && \
+    chmod +x /init/aria2ui.sh
 
 COPY init/ /conf/
 
-VOLUME /conf/ /download/
+VOLUME ["/conf", "/download"]
 
 EXPOSE 6800
 EXPOSE 18800
