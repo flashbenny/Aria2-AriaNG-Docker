@@ -18,7 +18,7 @@ RUN apk add --no-cache --update bash aria2 darkhttpd wget unzip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip && \
     
-COPY init/ /conf/
+COPY /init /conf/
 RUN chmod +x /conf/aria2ui.sh
 
 VOLUME ["/conf", "/download"]
