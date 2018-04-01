@@ -11,7 +11,7 @@ LABEL Platform="DSM" \
 
 WORKDIR /
 
-RUN apk add --no-cache --update bash aria2 darkhttpd wget unzip && \
+RUN apk add --no-cache aria2 darkhttpd wget unzip && \
     mkdir  /conf /download /AriaNG && \ 
     wget -c https://github.com/mayswind/AriaNg/releases/download/0.4.0/aria-ng-0.4.0.zip -O ariaNG.zip && \
     unzip -o -d /AriaNG ariaNG.zip && \
