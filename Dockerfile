@@ -20,7 +20,7 @@ RUN apk add --no-cache aria2 darkhttpd wget unzip && \
 
 COPY aria2* /conf/
 
-RUN ls -la /conf/*
+RUN chmod +x /conf/aria2ui.sh
 
 VOLUME ["/conf", "/download"]
 
