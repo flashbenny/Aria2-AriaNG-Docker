@@ -18,8 +18,9 @@ RUN apk add --no-cache aria2 darkhttpd wget unzip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip
 
-WORKDIR /
 COPY aria2* /conf/
+
+RUN ls -la /conf/*
 
 VOLUME ["/conf", "/download"]
 
