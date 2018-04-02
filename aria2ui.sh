@@ -5,6 +5,6 @@ else
 	if [ ! -f /conf/aria2.session ];then
 		touch /conf/aria2.session
 	fi
-    darkhttpd /AriaNG/  --port 18800
-    aria2c --conf-path=/conf/aria2.conf -D
 fi
+darkhttpd /AriaNG/  --port 18800
+aria2c --conf-path=/conf/aria2.conf
