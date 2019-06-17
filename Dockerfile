@@ -22,7 +22,7 @@ COPY aria2* /conf/
 
 RUN chmod +x /conf/aria2ui.sh
 
-VOLUME ["/conf", "/download"]
+VOLUME ["/conf", "/download","/AriaNG"]
 
 EXPOSE 6800 18800
 
