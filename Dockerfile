@@ -18,7 +18,8 @@ RUN apk add --no-cache aria2 darkhttpd wget unzip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip
 
-COPY aria2* /conf/
+COPY aria2.conf /conf/aria2.conf
+COPY aria2ui.sh /conf/aria2ui.sh
 
 RUN chmod +x /conf/aria2ui.sh
 
