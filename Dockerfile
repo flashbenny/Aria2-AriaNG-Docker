@@ -12,7 +12,7 @@ LABEL Platform="DSM" \
 WORKDIR /
 
 RUN apk add --no-cache aria2 darkhttpd wget unzip && \
-    mkdir /conf /download /AriaNG && \ 
+    mkdir /conf /download /AriaNG && \
     wget -c https://github.com/mayswind/AriaNg/releases/download/1.2.1/AriaNg-1.2.1.zip -O ariaNG.zip && \
     unzip -o -d /AriaNG ariaNG.zip && \
     apk del wget unzip && \
@@ -25,6 +25,6 @@ RUN chmod +x /conf/aria2ui.sh
 
 VOLUME ["/conf", "/download", "/AriaNG"]
 
-EXPOSE 6800 18800
+EXPOSE 6800 18800 6901
 
 CMD ["/conf/aria2ui.sh"]
