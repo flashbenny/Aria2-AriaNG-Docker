@@ -5,15 +5,15 @@ MAINTAINER <Benny.Flash>
 #Image Info
 LABEL Platform="DSM" \
       Name="Aria2" \
-      Ver="1.34.0" \
+      Ver="1.37.0" \
       WebUI="Aria NG" \
-      WebUIVer="1.2.1"
+      WebUIVer="1.3.7"
 
 WORKDIR /
 
 RUN apk add --no-cache aria2 darkhttpd wget unzip && \
     mkdir /conf /download /AriaNG && \
-    wget -c https://github.com/mayswind/AriaNg/releases/download/1.2.1/AriaNg-1.2.1.zip -O ariaNG.zip && \
+    wget -c https://github.com/mayswind/AriaNg/releases/download/1.3.7/AriaNg-1.3.7.zip -O ariaNG.zip && \
     unzip -o -d /AriaNG ariaNG.zip && \
     apk del wget unzip && \
     rm -rf ariaNG.zip
