@@ -3,8 +3,10 @@ name: Build and Push Docker Image
 # 触发条件：当推送到 main 分支或创建标签时执行
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     tags: [ "v*.*.*" ]  # 匹配类似 v1.0.0 的标签
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build-and-push:
