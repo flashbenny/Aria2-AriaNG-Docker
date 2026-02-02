@@ -6,7 +6,7 @@ MAINTAINER <Benny.Flash>
 LABEL Platform="DSM" \
       Name="Aria2" \
       Ver="1.37.0" \
-      WebUI="Aria NG" \
+      WebUI="AriaNG" \
       WebUIVer="1.3.13"
 
 WORKDIR /
