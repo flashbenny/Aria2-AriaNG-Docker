@@ -3,10 +3,10 @@ name: Build and Push Docker Image
 # 触发条件：当推送到 main 分支或创建标签时执行
 on:
   push:
-    branches: [ "latest" ]
+    branches: [ "master" ]
     tags: [ "v*.*.*" ]  # 匹配类似 v1.0.0 的标签
   pull_request:
-    branches: [ "latest" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-push:
@@ -44,5 +44,7 @@ jobs:
         with:
           context: .  # Dockerfile 所在目录（当前目录）
           push: true  # 推送镜像到 Docker Hub
-          tags: ${{ steps.meta.outputs.tags }}  # 使用步骤 4 生成的标签
+          tags: |
+            ${{ steps.meta.outputs.tags }}  # 使用步骤 4 生成的标签
+            ${{ secrets.DOCKER_HUB_USERNAME }}/aria2-ariang-docker:latest
           labels: ${{ steps.meta.outputs.labels }}  # 附加元数据标签
